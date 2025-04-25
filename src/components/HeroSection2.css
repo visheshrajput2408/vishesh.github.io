@@ -1,0 +1,90 @@
+/* Container for the entire hero section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 5%;
+    background-color: #84bd20; /* Dark background */
+    color: #fff;
+    position: relative;
+  }
+  
+  /* Left side content */
+  .hero-left {
+    flex: 1;
+    max-width: 50%;
+    z-index: 2; /* Ensure text stays above background images */
+  }
+  
+  .hero-left h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-left p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-left button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    background: #e53935; /* Reddish color */
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 4px;
+  }
+  
+  .hero-left button:hover {
+    background: #c62828;
+  }
+  
+  /* Right side content */
+  .hero-right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* The swirl or abstract background image */
+  .background-image {
+    width: 100%;
+    max-width: 600px;
+    opacity: 0.9;
+    transform: translate(200px,20px);
+  }
+  
+  /* The user's photo overlayed on top of the background */
+  .user-image {
+    position: absolute;
+    bottom: 0;
+    /* transform: translateY(55%); */
+    transform: translate(700px,-700px);
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(33, 30, 30, 0.5);
+  }
+
+  /* Italic name below the user image */
+/* NEW: Italic name below the user image */
+.user-name {
+    position: absolute;
+    bottom: 0;
+    /* Move it to roughly the same X offset as the user image (700px),
+       then place it slightly higher than the bottom so it appears
+       below the user image's 250px height. Adjust as needed. */
+    transform: translate(755px, -630px); 
+    font-style: italic;
+    font-size: 1.9 rem;
+    color: #94505e;
+    text-align: center;
+  }
+  
+  
