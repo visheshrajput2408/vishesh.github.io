@@ -1,0 +1,26 @@
+.social-bar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background: #b60c0cc4;
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+    z-index: 3; /* Make sure it's above other elements */
+  }
+  
+  .social-bar a {
+    color: #fff;
+    padding: 1rem;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .social-bar a:hover {
+    background: #444444d6;
+  }
+  
