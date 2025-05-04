@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/vishesh.github.io/static/css/main.966962f2.css",
+    "main.css": "/vishesh.github.io/static/css/main.ff13f4d3.css",
     "main.js": "/vishesh.github.io/static/js/main.fd4985bd.js",
     "static/media/3.jpg": "/vishesh.github.io/static/media/3.f7b0696dd881858c452e.jpg",
     "static/media/25.jpg": "/vishesh.github.io/static/media/25.191b113d0f9462d1b6d6.jpg",
     "static/media/swirl.jpg": "/vishesh.github.io/static/media/swirl.99fb2a8464d7bd0bc211.jpg",
     "index.html": "/vishesh.github.io/index.html",
-    "main.966962f2.css.map": "/vishesh.github.io/static/css/main.966962f2.css.map",
+    "main.ff13f4d3.css.map": "/vishesh.github.io/static/css/main.ff13f4d3.css.map",
     "main.fd4985bd.js.map": "/vishesh.github.io/static/js/main.fd4985bd.js.map"
   },
   "entrypoints": [
-    "static/css/main.966962f2.css",
+    "static/css/main.ff13f4d3.css",
     "static/js/main.fd4985bd.js"
   ]
 }
