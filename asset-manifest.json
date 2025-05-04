@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/vishesh.github.io/static/css/main.0ee20848.css",
-    "main.js": "/vishesh.github.io/static/js/main.82dd2c95.js",
+    "main.css": "/vishesh.github.io/static/css/main.ac277a76.css",
+    "main.js": "/vishesh.github.io/static/js/main.5ea18b58.js",
     "static/media/swirl5.jpg": "/vishesh.github.io/static/media/swirl5.4e702569c7a590e434de.jpg",
     "static/media/3.jpg": "/vishesh.github.io/static/media/3.f7b0696dd881858c452e.jpg",
     "static/media/swirl4.jpg": "/vishesh.github.io/static/media/swirl4.3fcffc08834353d8859e.jpg",
     "static/media/swirl6.jpg": "/vishesh.github.io/static/media/swirl6.aaf5c6d43afafaaca72a.jpg",
     "static/media/25.jpg": "/vishesh.github.io/static/media/25.191b113d0f9462d1b6d6.jpg",
+    "static/media/swirl5.png": "/vishesh.github.io/static/media/swirl5.97a29f48627c098d598e.png",
     "static/media/swirl2.jpeg": "/vishesh.github.io/static/media/swirl2.9f785fa396735480991c.jpeg",
+    "static/media/swirl6.png": "/vishesh.github.io/static/media/swirl6.c59846463ef373185e6c.png",
+    "static/media/swirl2.png": "/vishesh.github.io/static/media/swirl2.774ea0a3db53284e4d7d.png",
     "static/media/swirl.jpg": "/vishesh.github.io/static/media/swirl.99fb2a8464d7bd0bc211.jpg",
     "index.html": "/vishesh.github.io/index.html",
-    "main.0ee20848.css.map": "/vishesh.github.io/static/css/main.0ee20848.css.map",
-    "main.82dd2c95.js.map": "/vishesh.github.io/static/js/main.82dd2c95.js.map"
+    "main.ac277a76.css.map": "/vishesh.github.io/static/css/main.ac277a76.css.map",
+    "main.5ea18b58.js.map": "/vishesh.github.io/static/js/main.5ea18b58.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ee20848.css",
-    "static/js/main.82dd2c95.js"
+    "static/css/main.ac277a76.css",
+    "static/js/main.5ea18b58.js"
   ]
 }
