@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishesh Kumar — PhD Scholar, IISER Bhopal</title>
+  <meta name="description" content="Vishesh Kumar is a PhD scholar at IISER Bhopal researching computer vision, adversarial robustness, explainable AI, and trustworthy machine learning." />
+  <meta name="author" content="Vishesh Kumar" />
+
+  <!-- Open Graph for sharing -->
+  <meta property="og:title" content="Vishesh Kumar" />
+  <meta property="og:description" content="PhD Scholar — Computer Vision, Adversarial Robustness, Trustworthy AI." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://visheshrajput2408.github.io/vishesh.github.io/" />
+
+  <!-- Favicon (a simple inline SVG so you don't need an extra file) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='Georgia,serif'%3EV%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts: Fraunces (display), Source Serif 4 (body), JetBrains Mono (metadata) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,30..100&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,300..700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       DESIGN TOKENS — change these and the whole site updates
+       ========================================================= */
+    :root {
+      --bg:          #F4EFE6;   /* warm cream paper */
+      --bg-soft:     #EDE7DA;
+      --ink:         #1A1410;   /* deep ink */
+      --ink-soft:    #4A413A;   /* secondary text */
+      --ink-faint:   #8A8079;   /* tertiary / dates */
+      --accent:      #6E1F26;   /* oxblood */
+      --accent-soft: #8E2F36;
+      --rule:        rgba(26, 20, 16, 0.15);
+      --max-w:       760px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      font-variation-settings: "opsz" 16;
+      line-height: 1.62;
+      font-feature-settings: "kern", "liga", "onum";
+      padding: 0 1.5rem;
+      min-height: 100vh;
+      /* Subtle paper texture */
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(60, 40, 20, 0.04) 1px, transparent 0);
+      background-size: 14px 14px;
+    }
+
+    .wrapper {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 4rem 0 5rem;
+    }
+
+    /* =========================================================
+       LINKS
+       ========================================================= */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(110, 31, 38, 0.3);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    a:hover {
+      color: var(--accent-soft);
+      border-bottom-color: var(--accent-soft);
+    }
+
+    /* =========================================================
+       MASTHEAD / HEADER
+       ========================================================= */
+    .eyebrow {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .eyebrow::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 400;
+      font-variation-settings: "opsz" 144, "SOFT" 50;
+      font-size: clamp(2.8rem, 8vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -0.025em;
+      margin: 1.4rem 0 1rem;
+    }
+
+    .tagline {
+      font-family: 'Fraunces', Georgia, serif;
+      font-style: italic;
+      font-variation-settings: "opsz" 24;
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      max-width: 540px;
+      margin-bottom: 1.6rem;
+    }
+
+    .affiliation {
+      font-size: 0.96rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.8rem;
+    }
+    .affiliation strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Quick links row */
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.4rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      margin-top: 0.5rem;
+    }
+    .quick-links a {
+      border-bottom: none;
+      color: var(--ink);
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .quick-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--ink);
+      transform: scaleX(0.3);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+    .quick-links a:hover { color: var(--accent); }
+    .quick-links a:hover::after {
+      transform: scaleX(1);
+      background: var(--accent);
+    }
+
+    /* =========================================================
+       SECTIONS
+       ========================================================= */
+    section {
+      margin-top: 3.8rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+    }
+    .section-head h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-variation-settings: "opsz" 48;
+      font-size: 1.5rem;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .section-head .rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+      transform: translateY(-2px);
+    }
+    .section-head .index {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.1em;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+    .about p {
+      margin-bottom: 1rem;
+      font-size: 1.02rem;
+    }
+    .about p:last-child { margin-bottom: 0; }
+
+    /* =========================================================
+       NEWS — the section you'll update most
+       ========================================================= */
+    .news ul {
+      list-style: none;
+    }
+    .news li {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1.2rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px dashed var(--rule);
+      align-items: baseline;
+    }
+    .news li:last-child { border-bottom: none; }
+    .news time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+      padding-top: 2px;
+    }
+    .news .new-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 1px 6px;
+      border-radius: 2px;
+      margin-right: 0.4rem;
+      vertical-align: 2px;
+    }
+
+    @media (max-width: 540px) {
+      .news li { grid-template-columns: 1fr; gap: 0.25rem; }
+    }
+
+    /* =========================================================
+       PUBLICATIONS
+       ========================================================= */
+    .pub-list {
+      list-style: none;
+      counter-reset: pub;
+    }
+    .pub-list li {
+      counter-increment: pub;
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 0.6rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .pub-list li:last-child { border-bottom: none; }
+    .pub-list li::before {
+      content: counter(pub, decimal-leading-zero);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+      padding-top: 3px;
+    }
+    .pub-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-variation-settings: "opsz" 24;
+      font-size: 1.08rem;
+      line-height: 1.35;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+    .pub-authors {
+      font-size: 0.94rem;
+      color: var(--ink-soft);
+      margin-bottom: 0.35rem;
+    }
+    .pub-authors .me {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .pub-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--ink-faint);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.8rem;
+      align-items: center;
+    }
+    .venue {
+      background: var(--bg-soft);
+      color: var(--ink);
+      padding: 2px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+    }
+    .venue.top {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    .pub-meta a {
+      color: var(--accent);
+      border-bottom: none;
+    }
+    .pub-meta a:hover { text-decoration: underline; }
+
+    /* =========================================================
+       AWARDS, EDUCATION, INTERESTS
+       ========================================================= */
+    .list-clean { list-style: none; }
+    .list-clean li {
+      padding: 0.65rem 0;
+      border-bottom: 1px dashed var(--rule);
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 1rem;
+    }
+    .list-clean li:last-child { border-bottom: none; }
+    .list-clean .when {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+    }
+    @media (max-width: 540px) {
+      .list-clean li { grid-template-columns: 1fr; gap: 0.2rem; }
+    }
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .interest-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      padding: 0.35rem 0.7rem;
+      background: var(--bg-soft);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      color: var(--ink-soft);
+    }
+
+    .edu-entry {
+      margin-bottom: 1.4rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .edu-entry:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .edu-degree {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 0.15rem;
+    }
+    .edu-place { color: var(--ink-soft); font-size: 0.95rem; }
+    .edu-when {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--ink-faint);
+      margin-top: 0.2rem;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      color: var(--ink-faint);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* =========================================================
+       PRINT STYLES — site will print as a clean CV
+       ========================================================= */
+    @media print {
+      body { background: white; padding: 0; }
+      .wrapper { max-width: none; padding: 0; }
+      a { color: black; border-bottom: none; }
+      .venue.top { background: #333; }
+      footer { display: none; }
+    }
+
+    /* =========================================================
+       ENTRY ANIMATION
+       ========================================================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(8px);
+      animation: rise 0.7s ease forwards;
+    }
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in:nth-child(1) { animation-delay: 0.05s; }
+    .fade-in:nth-child(2) { animation-delay: 0.15s; }
+    .fade-in:nth-child(3) { animation-delay: 0.25s; }
+    .fade-in:nth-child(4) { animation-delay: 0.35s; }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- =========================================================
+         MASTHEAD
+         ========================================================= -->
+    <header class="fade-in">
+      <div class="eyebrow">Personal Website &nbsp;·&nbsp; Est. 2025</div>
+      <h1 class="name">Vishesh Kumar</h1>
+      <p class="tagline">
+        Researcher working at the intersection of computer vision, adversarial robustness, and trustworthy machine learning.
+      </p>
+      <p class="affiliation">
+        <strong>Visiting Scholar</strong>, Rice University &nbsp;·&nbsp;
+        <strong>PhD Scholar</strong>, IISER Bhopal
+      </p>
+      <nav class="quick-links">
+        <a href="mailto:vishesh22@iiserb.ac.in">Email</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=wEKZIoMAAAAJ" target="_blank" rel="noopener">Scholar</a>
+        <a href="https://www.linkedin.com/in/vishesh-rajput-7a277119b/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="#publications">Publications</a>
+      </nav>
+    </header>
+
+    <!-- =========================================================
+         ABOUT
+         ========================================================= -->
+    <section class="about fade-in" id="about">
+      <div class="section-head">
+        <span class="index">§ 01</span>
+        <h2>About</h2>
+        <span class="rule"></span>
+      </div>
+      <p>
+        I am a PhD scholar in Data Science and Engineering at the Indian Institute of Science Education and Research (IISER) Bhopal, currently visiting <a href="https://www.cs.rice.edu/~gb21/" target="_blank" rel="noopener">Dr. Guha Balakrishnan</a>'s group at Rice University as part of the Mehta Rice Engineering Scholars Program.
+      </p>
+      <p>
+        My research focuses on building <em>robust</em> and <em>trustworthy</em> vision systems &mdash; from defending models against adversarial patch attacks to designing interpretable methods that explain when and why a model fails. My work has appeared at CVPR, AISTATS, ICML, IJCB, AAAI, and in IEEE Transactions on Big Data.
+      </p>
+      <p>
+        Before the PhD, I trained as a mathematician (M.Sc. in Applied Mathematics, IIEST Shibpur) and worked briefly as a Junior Research Fellow at DA-IICT Gandhinagar on dynamical sampling theory.
+      </p>
+    </section>
+
+    <!-- =========================================================
+         NEWS — UPDATE THIS SECTION OFTEN
+         To add a new entry, just copy a <li> block and edit it.
+         Add `<span class="new-tag">NEW</span>` before the text
+         to highlight a recent item.
+         ========================================================= -->
+    <section class="news fade-in" id="news">
+      <div class="section-head">
+        <span class="index">§ 02</span>
+        <h2>News</h2>
+        <span class="rule"></span>
+      </div>
+      <ul>
+        <li>
+          <time>May 2026</time>
+          <span><span class="new-tag">NEW</span>Paper accepted at <strong>ICML 2026</strong> &mdash; <em>Feature Collapse Under Corruption: An Entropy Perspective on Robust Neural Networks</em>.</span>
+        </li>
+        <li>
+          <time>Apr 2026</time>
+          <span>Received the <strong>ACM/IARCS Travel Grant</strong> for AISTATS 2026.</span>
+        </li>
+        <li>
+          <time>Feb 2026</time>
+          <span>Paper accepted at <strong>AISTATS 2026</strong> &mdash; <em>The Unseen Adversaries: Robust and Generalized Defense Against Adversarial Patches</em>.</span>
+        </li>
+        <li>
+          <time>Jan 2026</time>
+          <span>Started a six-month visiting scholarship at <strong>Rice University</strong> with Dr. Guha Balakrishnan, supported by the Mehta Rice Engineering Scholars Program.</span>
+        </li>
+        <li>
+          <time>Dec 2025</time>
+          <span>AAAI 2026 Student Abstract accepted &mdash; <em>Q-MoFusion: A Quantum Classifier for Mosquito Species Classification</em>.</span>
+        </li>
+        <li>
+          <time>Aug 2025</time>
+          <span>Paper accepted in <strong>IEEE Transactions on Big Data</strong> &mdash; robustness benchmarking of CNNs vs. transformers.</span>
+        </li>
+        <li>
+          <time>Jun 2025</time>
+          <span>Presented our patch-detector work at <strong>CVPR 2025</strong> in Nashville.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =========================================================
+         RESEARCH INTERESTS
+         ========================================================= -->
+    <section class="fade-in" id="interests">
+      <div class="section-head">
+        <span class="index">§ 03</span>
+        <h2>Research Interests</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="interests">
+        <span class="interest-tag">Computer Vision</span>
+        <span class="interest-tag">Adversarial Robustness</span>
+        <span class="interest-tag">Explainable AI</span>
+        <span class="interest-tag">Trustworthy ML</span>
+        <span class="interest-tag">Foundation Models</span>
+        <span class="interest-tag">Deepfakes</span>
+        <span class="interest-tag">Presentation Attack Detection</span>
+        <span class="interest-tag">Diffusion Models</span>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PUBLICATIONS
+         To add a new paper, copy a <li> block at the top of the list.
+         Use class="venue top" for top-tier venues, class="venue" for others.
+         ========================================================= -->
+    <section id="publications">
+      <div class="section-head">
+        <span class="index">§ 04</span>
+        <h2>Selected Publications</h2>
+        <span class="rule"></span>
+      </div>
+      <ol class="pub-list">
+
+        <li>
+          <div>
+            <div class="pub-title">Feature Collapse Under Corruption: An Entropy Perspective on Robust Neural Networks</div>
+            <div class="pub-authors"><span class="me">V. Kumar</span>, A. Agarwal</div>
+            <div class="pub-meta">
+              <span class="venue top">ICML 2026</span>
+              <span>International Conference on Machine Learning</span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="pub-title">The Unseen Adversaries: Robust and Generalized Defense Against Adversarial Patches</div>
+            <div class="pub-authors"><span class="me">V. Kumar</span>, A. Agarwal</div>
+            <div class="pub-meta">
+              <span class="venue top">AISTATS 2026</span>
+              <span>Artificial Intelligence and Statistics</span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="pub-title">Robustness Benchmarking of Convolutional and Transformer Architectures for Image Classification</div>
+            <div class="pub-authors"><span class="me">V. Kumar</span>, S. Shukla, A. Agarwal</div>
+            <div class="pub-meta">
+              <span class="venue top">IEEE T-BD 2025</span>
+              <span>Transactions on Big Data</span>
+              <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11098661" target="_blank" rel="noopener">[paper]</a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="pub-title">A Unified, Resilient, and Explainable Adversarial Patch Detector</div>
+            <div class="pub-authors"><span class="me">V. Kumar</span>, A. Agarwal</div>
+            <div class="pub-meta">
+              <span class="venue top">CVPR 2025</span>
+              <span>Computer Vision and Pattern Recognition</span>
+              <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Kumar_A_Unified_Resilient_and_Explainable_Adversarial_Patch_Detector_CVPR_2025_paper.pdf" target="_blank" rel="noopener">[paper]</a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="pub-title">Q-MoFusion: A Quantum Classifier for Mosquito Species Classification</div>
+            <div class="pub-authors"><span class="me">V. Kumar</span>, A. Chanda, P. Bhattacharya, A. Agarwal</div>
+            <div class="pub-meta">
+              <span class="venue">AAAI 2026</span>
+              <span>Student Abstract Track</span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="pub-title">Are Object Recognition Models Effective and Unbiased for Biometric Recognition?</div>
+            <div class="pub-authors"><span class="me">V. Kumar</span>, A. Agarwal</div>
+            <div class="pub-meta">
+              <span class="venue">IJCB 2024</span>
+              <span>International Joint Conference on Biometrics</span>
+              <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10744463" target="_blank" rel="noopener">[paper]</a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="pub-title">On Unconstrained Ear Recognition for Privacy-Preserving Authentication</div>
+            <div class="pub-authors"><span class="me">V. Kumar</span>, A. Agarwal</div>
+            <div class="pub-meta">
+              <span class="venue">WAMWB 2023</span>
+              <span>ACM MobileHCI Workshop</span>
+              <a href="https://www.researchgate.net/profile/Vishesh-Rajput/publication/380324573_On_Unconstrained_Ear_Recognition_For_Privacy-Preserving_Authentication/links/6636059e06ea3d0b74258a80/On-Unconstrained-Ear-Recognition-For-Privacy-Preserving-Authentication.pdf" target="_blank" rel="noopener">[paper]</a>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- =========================================================
+         UNDER REVIEW
+         ========================================================= -->
+    <section id="preprints">
+      <div class="section-head">
+        <span class="index">§ 05</span>
+        <h2>Under Review &amp; Preprints</h2>
+        <span class="rule"></span>
+      </div>
+      <ol class="pub-list">
+
+        <li>
+          <div>
+            <div class="pub-title">PIPShield: A Unified Interpretable Prototype-Based Defense for Adversarial Patch Detection and Localization</div>
+            <div class="pub-authors"><span class="me">V. Kumar</span>, A. Agarwal</div>
+            <div class="pub-meta">
+              <span class="venue">In Submission</span>
+              <span>2026</span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="pub-title">Breaking Rigidity in Adversarial Patch Attacks</div>
+            <div class="pub-authors"><span class="me">V. Kumar</span>, A. Agarwal</div>
+            <div class="pub-meta">
+              <span class="venue">Under Review</span>
+              <span>A* Conference, 2025</span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="pub-title">Dynamical Representation of Frames in Tensor Product of Hardy Spaces</div>
+            <div class="pub-authors">N. K. Sahu, <span class="me">V. Rajput</span></div>
+            <div class="pub-meta">
+              <span class="venue">La Matematica (minor revision)</span>
+              <span>2023</span>
+              <a href="https://arxiv.org/abs/2308.11330" target="_blank" rel="noopener">[arXiv]</a>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- =========================================================
+         AWARDS
+         ========================================================= -->
+    <section id="awards">
+      <div class="section-head">
+        <span class="index">§ 06</span>
+        <h2>Awards &amp; Fellowships</h2>
+        <span class="rule"></span>
+      </div>
+      <ul class="list-clean">
+        <li><span class="when">2026</span><span>ACM/IARCS Travel Grant for AISTATS 2026</span></li>
+        <li><span class="when">2025–2026</span><span>Mehta Rice Engineering Scholars Program (MRESP), Rice University</span></li>
+        <li><span class="when">2025</span><span>CVPR 2025 DEI Travel Grant</span></li>
+        <li><span class="when">2025</span><span>ACM/IARCS Travel Grant for CVPR 2025</span></li>
+        <li><span class="when">2025</span><span>ConfAI 2025 Travel Grant</span></li>
+        <li><span class="when">2022–</span><span>Visvesvaraya PhD Fellowship, Government of India</span></li>
+        <li><span class="when">2019, 2020</span><span>Qualified IIT JAM</span></li>
+        <li><span class="when">2022</span><span>Qualified GATE</span></li>
+      </ul>
+    </section>
+
+    <!-- =========================================================
+         EDUCATION
+         ========================================================= -->
+    <section id="education">
+      <div class="section-head">
+        <span class="index">§ 07</span>
+        <h2>Education</h2>
+        <span class="rule"></span>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-degree">PhD, Data Science and Engineering</div>
+        <div class="edu-place">Indian Institute of Science Education and Research (IISER), Bhopal</div>
+        <div class="edu-when">Dec 2022 — Present</div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-degree">M.Sc. Applied Mathematics &nbsp;<span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--ink-faint);">CGPA 8.8/10</span></div>
+        <div class="edu-place">Indian Institute of Engineering Science and Technology (IIEST), Shibpur</div>
+        <div class="edu-when">Jul 2019 — Aug 2021</div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-degree">B.Sc. Physical Science &nbsp;<span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--ink-faint);">CGPA 7.71/10</span></div>
+        <div class="edu-place">Motilal Nehru College, University of Delhi</div>
+        <div class="edu-when">Jul 2016 — Jun 2019</div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CONTACT
+         ========================================================= -->
+    <section id="contact">
+      <div class="section-head">
+        <span class="index">§ 08</span>
+        <h2>Contact</h2>
+        <span class="rule"></span>
+      </div>
+      <p>
+        The best way to reach me is by email at
+        <a href="mailto:vishesh22@iiserb.ac.in">vishesh22@iiserb.ac.in</a>.
+        I'm always happy to chat about adversarial robustness, interpretable vision systems, or collaborations.
+      </p>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+    <footer>
+      <span>© Vishesh Kumar &nbsp;·&nbsp; Last updated May 2026</span>
+      <span>Set in Fraunces &amp; Source Serif</span>
+    </footer>
+
+  </div>
+</body>
+</html>

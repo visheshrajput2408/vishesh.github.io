@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# My Personal Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A single-file personal website. No build steps, no React, no `npm install`.
+Just one HTML file — open it, edit what you want, push to GitHub.
 
-## Available Scripts
+## How to deploy (one time)
 
-In the project directory, you can run:
+Your existing URL `https://visheshrajput2408.github.io/vishesh.github.io/` is a
+GitHub Pages "project" page. To keep that exact URL:
 
-### `npm start`
+1. Go to your repository: **github.com/visheshrajput2408/vishesh.github.io**
+2. **Delete all the old React files** (or move them to a `backup/` folder so you
+   keep them for reference). The simplest way: clone the repo, wipe its contents,
+   then drop in this `index.html`.
+3. Place `index.html` at the root of the repo.
+4. Commit and push.
+5. In the repo on GitHub → **Settings → Pages** → Source: `Deploy from a branch` →
+   Branch: `main` (folder `/root`). Save.
+6. Wait 30–60 seconds. Your site is live at the same URL as before.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> **Tip:** if you want to keep your old React site as a backup before switching,
+> create a branch `react-backup` from the current `main` first. Then wipe `main`
+> and put `index.html` there.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to update the site (every time after that)
 
-### `npm test`
+Everything you'd want to change is marked with HTML comments like
+`<!-- UPDATE THIS SECTION -->`. Open `index.html`, find the section,
+edit it, commit, push. That's it.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Adding a news entry (most common update)
 
-### `npm run build`
+Find the `News` section (search for `id="news"`). Copy this block at the
+top of the `<ul>`:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```html
+<li>
+  <time>Month YYYY</time>
+  <span><span class="new-tag">NEW</span>Your news text here, with <strong>bold</strong> or <em>italic</em> as needed.</span>
+</li>
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Edit the date and text. Remove the `<span class="new-tag">NEW</span>` from
+older entries when you add a fresh one.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Adding a publication
 
-### `npm run eject`
+Find the `Selected Publications` section. Copy this template at the top
+of the `<ol class="pub-list">`:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```html
+<li>
+  <div>
+    <div class="pub-title">Title of your paper</div>
+    <div class="pub-authors"><span class="me">V. Kumar</span>, Co-author</div>
+    <div class="pub-meta">
+      <span class="venue top">VENUE 2026</span>
+      <span>Full venue name</span>
+      <a href="https://link.to/paper" target="_blank" rel="noopener">[paper]</a>
+    </div>
+  </div>
+</li>
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Use `class="venue top"` for top-tier venues (highlighted in oxblood)
+- Use `class="venue"` for other venues (subtle grey)
+- The `<a>` link is optional — remove it if there's no public link yet
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Adding a CV PDF
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Drop your `cv.pdf` file in the repo root. The "CV" link in the header
+already points to it.
 
-## Learn More
+### Changing colors / fonts
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+All design tokens are at the top of the `<style>` block in `index.html`:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```css
+:root {
+  --bg:     #F4EFE6;   /* page background */
+  --ink:    #1A1410;   /* main text */
+  --accent: #6E1F26;   /* oxblood — used for headings, links */
+  ...
+}
+```
 
-### Code Splitting
+Change one value, the whole site updates.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## What's where in the file
 
-### Analyzing the Bundle Size
+```
+<head>          — page title, meta tags, fonts, CSS
+<header>        — name, tagline, affiliations, quick links
+§ 01 About      — bio paragraphs
+§ 02 News       — recent updates (edit this often)
+§ 03 Interests  — research interest tags
+§ 04 Publications
+§ 05 Under Review / Preprints
+§ 06 Awards
+§ 07 Education
+§ 08 Contact
+<footer>        — copyright, "last updated"
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Why this stack?
 
-### Making a Progressive Web App
+- **One file, zero dependencies.** Everything is in `index.html`. No build
+  pipeline to break, no `node_modules`, no compatibility issues with React
+  versions, no Vite/Webpack configs to debug.
+- **Future-proof.** Plain HTML/CSS works in every browser, forever.
+  Frameworks come and go; HTML doesn't.
+- **Fast.** The page is ~25 KB and loads instantly.
+- **Prints as a clean CV.** Try Ctrl/Cmd+P — the site has a print stylesheet
+  that strips the decoration and gives you a clean printable CV.
+- **Editable from anywhere.** You can edit directly on github.com (click the
+  pencil icon on `index.html`), commit, and it's live in 30 seconds — no
+  local dev environment needed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Optional upgrades later
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Add an `images/` folder and reference photos in your bio.
+- Add a `papers/` folder with PDFs and link to them.
+- If you ever want a blog: add a `posts/` folder of HTML files and link
+  them from a new "Writing" section.
